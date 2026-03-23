@@ -57,6 +57,7 @@
             this.lbToppings = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbSize = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.grSize.SuspendLayout();
             this.grToppings.SuspendLayout();
             this.grCrust.SuspendLayout();
@@ -147,6 +148,7 @@
             this.chTomatoes.TabIndex = 6;
             this.chTomatoes.Text = "Tomatoes";
             this.chTomatoes.UseVisualStyleBackColor = true;
+            this.chTomatoes.CheckedChanged += new System.EventHandler(this.chTomatoes_CheckedChanged);
             // 
             // chExtra
             // 
@@ -179,6 +181,7 @@
             this.chOnion.TabIndex = 5;
             this.chOnion.Text = "Onion";
             this.chOnion.UseVisualStyleBackColor = true;
+            this.chOnion.CheckedChanged += new System.EventHandler(this.chOnion_CheckedChanged);
             // 
             // grCrust
             // 
@@ -201,6 +204,7 @@
             this.rbThik.TabStop = true;
             this.rbThik.Text = "Thik";
             this.rbThik.UseVisualStyleBackColor = true;
+            this.rbThik.CheckedChanged += new System.EventHandler(this.rbThik_CheckedChanged);
             // 
             // rbThin
             // 
@@ -212,6 +216,7 @@
             this.rbThin.TabStop = true;
             this.rbThin.Text = "Thin";
             this.rbThin.UseVisualStyleBackColor = true;
+            this.rbThin.CheckedChanged += new System.EventHandler(this.rbThin_CheckedChanged);
             // 
             // grWhere
             // 
@@ -234,6 +239,7 @@
             this.rbTakeOut.TabStop = true;
             this.rbTakeOut.Text = "Take Out";
             this.rbTakeOut.UseVisualStyleBackColor = true;
+            this.rbTakeOut.CheckedChanged += new System.EventHandler(this.rbTakeOut_CheckedChanged);
             // 
             // rbEatIn
             // 
@@ -245,6 +251,7 @@
             this.rbEatIn.TabStop = true;
             this.rbEatIn.Text = "Eat In";
             this.rbEatIn.UseVisualStyleBackColor = true;
+            this.rbEatIn.CheckedChanged += new System.EventHandler(this.rbEatIn_CheckedChanged);
             // 
             // btOrder
             // 
@@ -256,6 +263,7 @@
             this.btOrder.TabIndex = 5;
             this.btOrder.Text = "Order";
             this.btOrder.UseVisualStyleBackColor = false;
+            this.btOrder.Click += new System.EventHandler(this.btOrder_Click);
             // 
             // btReset
             // 
@@ -267,9 +275,11 @@
             this.btReset.TabIndex = 6;
             this.btReset.Text = "Reset";
             this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // grSummary
             // 
+            this.grSummary.Controls.Add(this.label8);
             this.grSummary.Controls.Add(this.label4);
             this.grSummary.Controls.Add(this.label2);
             this.grSummary.Controls.Add(this.label7);
@@ -286,15 +296,15 @@
             this.grSummary.TabIndex = 7;
             this.grSummary.TabStop = false;
             this.grSummary.Text = "Summary";
+            this.grSummary.Enter += new System.EventHandler(this.grSummary_Enter);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(113, 185);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
@@ -312,9 +322,8 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(93, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "label7";
             // 
             // label6
             // 
@@ -331,9 +340,8 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(114, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
             // 
             // lbCrust
             // 
@@ -368,9 +376,8 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(74, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbSize
@@ -382,6 +389,14 @@
             this.lbSize.Size = new System.Drawing.Size(41, 16);
             this.lbSize.TabIndex = 0;
             this.lbSize.Text = "Size:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(78, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 10;
             // 
             // Form2
             // 
@@ -398,6 +413,7 @@
             this.Controls.Add(this.grToppings);
             this.Controls.Add(this.lbFill);
             this.Controls.Add(this.grSize);
+            this.MaximumSize = new System.Drawing.Size(815, 485);
             this.MinimumSize = new System.Drawing.Size(815, 485);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -447,5 +463,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
     }
 }
